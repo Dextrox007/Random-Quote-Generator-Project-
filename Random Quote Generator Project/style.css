@@ -144,7 +144,7 @@ button .loading{
     pointer-events: none;
 }
 
-@media(max-width: 500px){
+@media(max-width: 400px){
     body{
         justify-content: center;
         margin: auto;
