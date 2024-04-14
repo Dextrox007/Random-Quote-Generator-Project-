@@ -5,6 +5,7 @@ class RandomQuoteGenerator {
     this.quoteBtn = document.querySelector(".banother");
     this.soundBtn = document.querySelector(".sound");
     this.copyBtn = document.querySelector(".copy");
+    this.whatsappBtn = document.querySelector(".whatsapp");
     this.twitterBtn = document.querySelector(".twitter");
     this.searchBtn = document.querySelector(".bsearch");
     this.wrapper = document.querySelector('.wrapper');
@@ -20,6 +21,7 @@ class RandomQuoteGenerator {
     this.soundBtn.addEventListener("click", this.toggleSpeechSynthesis.bind(this));
     this.copyBtn.addEventListener("click", this.copyQuote.bind(this));
     this.twitterBtn.addEventListener("click", this.shareOnTwitter.bind(this));
+    this.whatsappBtn.addEventListener("click", this.shareOnWhatsApp.bind(this));
     this.printBtn.addEventListener("click", this.printContent.bind(this));
   }
 
@@ -82,6 +84,11 @@ class RandomQuoteGenerator {
   shareOnTwitter() {
     let tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.quoteText.innerText + " by " + this.authorName.innerText)}`;
     window.open(tweetUrl, "_blank");
+  }
+  shareOnWhatsapp () {
+    const quoteText = document.querySelector('.quote').innerText;
+  const url = `whatsapp://send?text=${quoteText}`;
+  window.location.href = url;
   }
 
   printContent() {
