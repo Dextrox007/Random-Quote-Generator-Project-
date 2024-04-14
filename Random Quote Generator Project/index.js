@@ -85,8 +85,8 @@ class RandomQuoteGenerator {
     let tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.quoteText.innerText + " by " + this.authorName.innerText)}`;
     window.open(tweetUrl, "_blank");
   }
-  shareOnWhatsapp () {
-    const quoteText = document.querySelector('.quote').innerText;
+  shareOnWhatsApp () {
+    const quoteText = this.quoteText.innerText;
   const url = `whatsapp://send?text=${quoteText}`;
   window.location.href = url;
   }
